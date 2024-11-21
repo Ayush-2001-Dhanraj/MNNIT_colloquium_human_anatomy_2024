@@ -31,8 +31,8 @@ function App() {
   const [selectedPoint, setSelectedPoint] = useState(null);
 
   const handlePointClick = (label) => {
+    setSelectedPoint(null);
     setSelectedPoint(label);
-    console.log(`Clicked on: ${label}`);
   };
 
   return (
@@ -77,14 +77,20 @@ function App() {
                 label="Stomach"
               />
               <ClickablePoint
+                position={[-0.03, 0.23, -0.06]} // Adjust coordinates
+                onClick={() => handlePointClick("Spine")}
+                label="Spine"
+              />
+              <ClickablePoint
                 position={[-0.03, 0.15, 0.15]} // Adjust coordinates
-                onClick={() => handlePointClick("Stomach")}
-                label="Stomach"
+                onClick={() => handlePointClick("Intestines")}
+                label="Intestines"
               />
             </Stage>
           </PresentationControls>
         </Canvas>
       </div>
+      <Visualizer label={selectedPoint} setSelectedPoint={setSelectedPoint} />
     </div>
   );
 }

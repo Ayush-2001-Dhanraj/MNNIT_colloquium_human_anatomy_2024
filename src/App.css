@@ -26,3 +26,16 @@
     background-color: red;
     flex: 1
 }
+
+button {
+    padding: 2px 8px;
+    background-color: red;
+    color: #fff;
+    font-weight: 600;
+}
+
+button:hover {
+    color: red;
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
